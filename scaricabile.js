@@ -126,12 +126,41 @@ const jobs = [
 
 
 
-// const jobType = document.getElementById(jobType);
-// const jobLocation = document.getElementById(jobLocation);
-// const submitBtn = document.getElementById(submitBtn);
-// const container = document.getElementById(container);
+const submitBtn = document.getElementById("submitBtn");
+const myList = document.getElementById("myList");
+const p = document.getElementById("p");
+
+const jobFinder = () => {
+  let result = {
+    title: document.getElementById("jobType").value.toLowerCase(),
+    location: document.getElementById("jobLocation").value.toLowerCase()
+  }
+  return result
+}
+
+const clearValue = (clearValue) => clearValue.innerHTML = '';
 
 
-jobs.forEach((element) => console.log("all'interno del forEach: ", element))
-const result = jobs.filter((job) => job.location.toLowerCase().includes("us") && job.title.toLowerCase().includes("dev"));
-console.log(result)
+document.getElementById("submitBtn").addEventListener('click', function () {
+  console.log(jobFinder())
+  clearValue(myList)
+  let resultJobFinder = jobFinder()
+  const result = jobs.filter((job) => job.location.toLowerCase().includes(resultJobFinder.location) && job.title.toLowerCase().includes(resultJobFinder.title));
+  const count = result.length
+  p.innerHTML += " "+count.toString()+" risultati"
+  if (count === 1) {
+    p.innerHTML = "é stato trovato 1 risultato"
+  } else if (count === 0) {
+    p.innerHTML = "non sono stati trovati risultati"
+  }
+  result.forEach((element) => {
+    let mostraTitoloeLocation = element.title + " - " + element.location
+    myList.innerHTML += "<li>" + mostraTitoloeLocation + "</li>"
+  })
+})
+
+
+// jobs.forEach((element) => console.log("all'interno del forEach: ", element))
+// const result = jobs.filter((job) => job.location.toLowerCase().includes("us") && job.title.toLowerCase().includes("dev"));
+// console.log(result)
+
