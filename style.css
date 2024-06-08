@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    margin: 0px 0px ;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(241, 241, 241);
+    box-shadow: 0 4px 2px -2px rgb(190, 190, 190);
+    padding: 10px 0px;
+}
+
+.navbar{
+    display: flex;
+    justify-content:end;
+    gap: 15px;
+    align-items: center;
+}
+
+.container img{
+    width: 100px;
+    height: 75px;
+    border-radius: 15px;
+}
+
+
+#p{
+    margin-top: 50px;
+}
+
+.imageContainer{
+    background-image: url(assets/il_570xN.3901020588_53lr.webp);
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.liText{
+    background-color: rgba( 0, 0, 0, 0);
+}

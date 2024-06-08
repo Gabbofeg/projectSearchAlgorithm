@@ -138,12 +138,13 @@ const jobFinder = () => {
   return result
 }
 
-const clearValue = (clearValue) => clearValue.innerHTML = '';
+const clearValue = (clearValue, substituteString) => clearValue.innerHTML = substituteString;
 
 
 document.getElementById("submitBtn").addEventListener('click', function () {
   console.log(jobFinder())
-  clearValue(myList)
+  clearValue(myList,'')
+  clearValue(p,'Sono stati trovati:')
   let resultJobFinder = jobFinder()
   const result = jobs.filter((job) => job.location.toLowerCase().includes(resultJobFinder.location) && job.title.toLowerCase().includes(resultJobFinder.title));
   const count = result.length
@@ -155,7 +156,7 @@ document.getElementById("submitBtn").addEventListener('click', function () {
   }
   result.forEach((element) => {
     let mostraTitoloeLocation = element.title + " - " + element.location
-    myList.innerHTML += "<li>" + mostraTitoloeLocation + "</li>"
+    myList.innerHTML += "<li class='liText'>" + mostraTitoloeLocation + "</li>"
   })
 })
 

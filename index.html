@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <div>
-            <div >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <img src="assets/Screenshot 2024-06-08 141303.png">
+        <div class="navbar">
+            <div>
                 <input type="text" id="jobType" placeholder="Insert the job type">
             </div>
             <div>
                 <input type="text" id="jobLocation" placeholder="Insert the location">
             </div>
             <div>
-                <button id="submitBtn">Try it</button>
+                <button id="submitBtn">Cerca</button>
             </div>
         </div>
+    </div>
+    <div class="imageContainer">
+        <p id="p"></p>
+        <ol id="myList"></ol>
+    </div>
+    <script src="scaricabile.js"></script>
+</body>
 
-        <div>
-            <p id="p">Sono stati trovati:</p>
-            <ul id="myList"></ul>
-        </div>
-        <script src="scaricabile.js"></script>
-    </body>
 </html>
