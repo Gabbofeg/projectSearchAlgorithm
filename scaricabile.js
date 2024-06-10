@@ -155,8 +155,8 @@ document.getElementById("submitBtn").addEventListener('click', function () {
     p.innerHTML = "non sono stati trovati risultati"
   }
   result.forEach((element) => {
-    let mostraTitoloeLocation = element.title + " - " + element.location
-    myList.innerHTML += "<li class='liText'>" + mostraTitoloeLocation + "</li>"
+    let showTitleAndLocation = element.title + " - " + element.location
+    myList.innerHTML += "<li class='liText'>" + showTitleAndLocation + "</li>"
   })
 })
 
