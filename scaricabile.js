@@ -141,14 +141,14 @@ const jobFinder = () => {
 const clearValue = (clearValue, substituteString) => clearValue.innerHTML = substituteString;
 
 
-document.getElementById("submitBtn").addEventListener('click', function () {
+submitBtn.addEventListener('click', function () {
   console.log(jobFinder())
-  clearValue(myList,'')
-  clearValue(p,'Sono stati trovati:')
+  clearValue(myList, '')
+  clearValue(p, 'Sono stati trovati:')
   let resultJobFinder = jobFinder()
   const result = jobs.filter((job) => job.location.toLowerCase().includes(resultJobFinder.location) && job.title.toLowerCase().includes(resultJobFinder.title));
   const count = result.length
-  p.innerHTML += " "+count.toString()+" risultati"
+  p.innerHTML += " " + count.toString() + " risultati"
   if (count === 1) {
     p.innerHTML = "é stato trovato 1 risultato"
   } else if (count === 0) {
